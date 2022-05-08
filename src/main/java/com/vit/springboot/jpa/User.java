@@ -18,7 +18,7 @@ public class User {
 	protected User() {
 		
 	}
-	
+	             
 	public User(String name, String role) {
 		super();
 		this.name = name;
