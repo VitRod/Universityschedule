@@ -32,6 +32,6 @@ public class WelcomeController {
 		map.put("value", configuration.isValue());
 		return map;
 		
-	}
+	}      
 	                 
 }
