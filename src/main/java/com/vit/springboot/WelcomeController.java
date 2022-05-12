@@ -4,8 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.vit.springboot.configuration.BasicConfiguration;
 
@@ -21,17 +26,19 @@ public class WelcomeController {
 	@RequestMapping("/welcome")
 	public String welcome() {
 		return service.retrieveWelcomeMessage();
-	}
-	
+	}  
 	
 	@RequestMapping("/dynamic-configuration")
-	public Map<String, Object> dynamicConfiguration(){
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("message", configuration.getMessage());
-		map.put("number", configuration.getNumber());
-		map.put("value", configuration.isValue());
-		return map;
+	public String dynamicConfiguration(){		
+		String message = configuration.getMessage();
+		int number = configuration.getNumber();
+		boolean value = configuration.isValue();   
 		
-	}      
-	                 
+		String result = "Details submitted by you: Message: " + message + ", Number: " + number  + ", Value: "  +value;
+		
+		return result;
+	
+	}
+
+	
 }

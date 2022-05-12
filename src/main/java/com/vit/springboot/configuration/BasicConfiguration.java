@@ -1,20 +1,26 @@
 package com.vit.springboot.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("basic")
+//@ConfigurationProperties("basic")
 public class BasicConfiguration {
 	
+	@Value("${basic.value}")
 	private boolean value;
+	
+	@Value("${basic.message}")
 	private String message;
+	
+	@Value("${basic.number}")
 	private int number;
 	
 	public boolean isValue() {
 		return value;
 	}
-
+   
 	public void setValue(boolean value) {
 		this.value = value;
 	}
