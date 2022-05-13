@@ -1,4 +1,4 @@
-package com.vit.springboot.configuration;
+package com.vit.springboot.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 //@ConfigurationProperties("basic")
-public class BasicConfiguration {
+public class BasicService {
 	
 	@Value("${basic.value}")
 	private boolean value;
